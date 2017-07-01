@@ -1,9 +1,37 @@
-extends partial/layout
-block content
-	.autopagerize_page_element: .content
-		- page.posts.each(function (item) {
-			include mixins
-			+make_post(item, false)
-		- })
-		include mixins
-		+make_pager(__('prev'), __('next'))
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="John Doe"><title>Hexo</title><meta name="description" content="A Blog Powered By Hexo"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">Hexo</a></h3></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/" class="current">首页</a></li><li><a href="/about">关于</a></li><li><a href="/archives">归档</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" style="display:none;" class="fa fa-chevron-left"> </a></li></div><div class="avatar"><img></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2017/06/11/hello-world/">Hello World</a></h3></div><div class="post-content"><p>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in trouble...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2017-06-11</span><i class="fa fa-tag"></i></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2017/06/11/first/">first</a></h3></div><div class="post-content"><p></p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2017-06-11</span><i class="fa fa-tag"></i></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2017/05/18/firstPassage/">firstPassage</a></h3></div><div class="post-content"><p>
+hello , i am fjm
+
+biaotizhe shi diyi biaoti
+sec biaotifjf  lsjf lskjffjldkjf d;fj  dfjk
+</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2017-05-18</span><i class="fa fa-tag"></i><a href="/tags/first/" title="first" class="tag">first </a><a href="/tags/my/" title="my" class="tag">my </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2016/11/11/有趣的ChromeDevTools/">有趣的Chrome DevTools</a></h3></div><div class="post-content"><p>
+Chrome 自带开发者工具很有趣，怎么个有趣法呢？Chrome的JS控制台有很多很多神奇而且有趣的功能。此文仅例举其中几个，一起来看看吧。
+
+我们调试的时候控制台总会有一大堆密密麻麻的代码时，请试着输入 clear() 然后回车，清空所有，回到原始界面。    
+jq选择器第一个有趣的事情就是获取页面上的DO...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2016-11-11</span><i class="fa fa-tag"></i><a href="/tags/javascript/" title="javascript" class="tag">javascript </a><a href="/tags/Chrome-DevTools/" title="Chrome DevTools" class="tag">Chrome DevTools </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2016/07/08/JSONP跨域/">JSONP跨域</a></h3></div><div class="post-content"><p>
+Asynchronous JavaScript and XML (Ajax) 是Web2.0的关键技术。AJAX与服务器交换数据刷新局部网页,不需重载。
+
+因为浏览器及同源策略的限制，ajax不允许跨域通信。同源是指协议、域名和端口都一致的情况。同源策略保证一个源的动态脚本不能读取或操作其他源的http响应和c...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2016-07-08</span><i class="fa fa-tag"></i><a href="/tags/JSONP跨域/" title="JSONP跨域" class="tag">JSONP跨域 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2016/04/25/js-06/">JavaScript简明教程（6）</a></h3></div><div class="post-content"><p>
+闭包是学习JavaScript的难点之一，因JavaScript是单线程，故回调使用频繁，本章节主要讲了闭包以及回调。
+
+闭包闭包简单说明
+闭:关闭,封闭
+包:包住,包裹
+闭包:通过某种方式实现的一个封闭的、包裹的对外不公开的结构|空间
+闭包的原理:变量的访问原则(即上一级的作用域无法访问下一级的作用域),其实...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2016-04-25</span><i class="fa fa-tag"></i><a href="/categories/JavaScript简明教程/" title="JavaScript简明教程" class="tag">JavaScript简明教程 </a><a href="/tags/JavaScript/" title="JavaScript" class="tag">JavaScript </a><a href="/tags/简明教程/" title="简明教程" class="tag">简明教程 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2016/03/18/js-05/">JavaScript简明教程（5）</a></h3></div><div class="post-content"><p>
+JavaScript中有严格模式和非严格模式两种运行环境,本章节主要讲严格模式及非严格模式下函数和变量的区别,最后简单讲诉了JavaScript作用域。
+
+变量和函数私有变量和函数
+定义在构造函数内部而被this对象的变量,在外部无法访问到的变量和函数
+
+公有变量和方法
+对外暴露接口,可以通过构造函数对象创建的...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2016-03-18</span><i class="fa fa-tag"></i><a href="/categories/JavaScript简明教程/" title="JavaScript简明教程" class="tag">JavaScript简明教程 </a><a href="/tags/JavaScript/" title="JavaScript" class="tag">JavaScript </a><a href="/tags/简明教程/" title="简明教程" class="tag">简明教程 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2016/03/05/js-04/">JavaScript简明教程（4）</a></h3></div><div class="post-content"><p>
+本章节主要讲解了原型链及相关方法。
+
+原型链及相关属性方法简单说明原型链代码示例1234567891011121314151617&lt;script&gt;    //01 提供Person构造函数    function Person(name,age) &#123;        this.name = ...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2016-03-05</span><i class="fa fa-tag"></i><a href="/categories/JavaScript简明教程/" title="JavaScript简明教程" class="tag">JavaScript简明教程 </a><a href="/tags/JavaScript/" title="JavaScript" class="tag">JavaScript </a><a href="/tags/简明教程/" title="简明教程" class="tag">简明教程 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2016/02/18/js-3/">JavaScript简明教程（3）</a></h3></div><div class="post-content"><p>
+关于继承，通俗说子继父业。在JavaScript中，Object是所有对象的父级|父类型|超类型：js中所有的对象都直接或间接的继承自Object。
+
+继承相关方法在讲继承之前，我们必须先了解一些相关的方法。
+hasOwnProperty和in属性操作in关键字作用：用来检查对象中是否存在某个属性(不区分实例属...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2016-02-18</span><i class="fa fa-tag"></i><a href="/categories/JavaScript简明教程/" title="JavaScript简明教程" class="tag">JavaScript简明教程 </a><a href="/tags/JavaScript/" title="JavaScript" class="tag">JavaScript </a><a href="/tags/简明教程/" title="简明教程" class="tag">简明教程 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2016/02/08/js原型继承/">可能是最简单的js原型继承</a></h3></div><div class="post-content"><p>
+JavaScript是一门奇妙的弱类型语言，原型继承与其它语言的类继承有所区别，下面通过一个简单的例子展示js的原型继承。
+
+你有对象吗？你有对象吗？没有，赶紧就new一个吧！首先，创建构造函数Parent然后，new出一个Parent的实例对象child此时，构造函数Parent拥有以下属性aString、a...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2016-02-08</span><i class="fa fa-tag"></i><a href="/tags/javascript/" title="javascript" class="tag">javascript </a><a href="/tags/原型继承机制/" title="原型继承机制" class="tag">原型继承机制 </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a role="navigation" href="/page/2/" class="btn">下一页</a></li></ul></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>

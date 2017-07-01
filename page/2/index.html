@@ -1,9 +1,18 @@
-extends partial/layout
-block content
-	.autopagerize_page_element: .content
-		- page.posts.each(function (item) {
-			include mixins
-			+make_post(item, false)
-		- })
-		include mixins
-		+make_pager(__('prev'), __('next'))
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="John Doe"><title>Hexo</title><meta name="description" content="A Blog Powered By Hexo"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">Hexo</a></h3></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/" class="current">首页</a></li><li><a href="/about">关于</a></li><li><a href="/archives">归档</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" style="display:none;" class="fa fa-chevron-left"> </a></li></div><div class="avatar"><img></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2016/02/01/js-02/">JavaScript简明教程（2）</a></h3></div><div class="post-content"><p>
+面向对象方法被人谈论了二十多年了，直到今天，我们还一直在谈对象。
+
+面向对象编程面向层过程和面向对象编程01 面向对象编程和面向过程编程是一种编程思想,和具体的语言关系不大。02 面向过程编程和面向对象编程的主要区别1234567891011121314151617181920面向过程编程:     关注点在于...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2016-02-01</span><i class="fa fa-tag"></i><a href="/categories/JavaScript简明教程/" title="JavaScript简明教程" class="tag">JavaScript简明教程 </a><a href="/tags/JavaScript/" title="JavaScript" class="tag">JavaScript </a><a href="/tags/简明教程/" title="简明教程" class="tag">简明教程 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2016/01/15/01/">JavaScript简明教程（1）</a></h3></div><div class="post-content"><p>
+JavaScript与Java没有半毛钱关系，网景公司员工Brendan Eich用了10天时间设计了JavaScript语言。
+
+JavaScript的范围JavaScript的范围：BOM + DOM + ECMAScript
+BOM简单说明123456BOM即Browser Object Mode,浏览器...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2016-01-15</span><i class="fa fa-tag"></i><a href="/categories/JavaScript简明教程/" title="JavaScript简明教程" class="tag">JavaScript简明教程 </a><a href="/tags/JavaScript/" title="JavaScript" class="tag">JavaScript </a><a href="/tags/简明教程/" title="简明教程" class="tag">简明教程 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2016/01/08/12年怀旧/">12年逗比如我</a></h3></div><div class="post-content"><p>
+12年写的乱七八遭，拿出来怀旧，权当笑话，笑笑更开心！
+
+一周大一秀欢迎收听一周大一秀，观众朋友们大家好。好学生就是我，我就是曾大贤。欢迎收听本节目，请大家用热烈的掌声欢迎我们今天的主角出场。他就是人见人爱，花见花开，俗称一朵海棠压梨花的帅哥。没错，你猜对了，好学生就是我，我就是曾大贤。接下来请大家千万把耳屎勾...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2016-01-08</span><i class="fa fa-tag"></i><a href="/tags/娱乐/" title="娱乐" class="tag">娱乐 </a><a href="/tags/怀旧/" title="怀旧" class="tag">怀旧 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2016/01/03/五分钟学会简单使用git/">五分钟学会简单使用git</a></h3></div><div class="post-content"><p>
+五分钟，简单入门。学会之后可以愉快的管理你的文件啦。
+
+简单使用git 其实很简单，有多简单呢？
+    1. git init 初始化一个仓库；
+    2. git add . 添加文件到暂存区；
+    3. git commit -m&apos;messeage&apos;  提交至版本库；
+    4...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2016-01-03</span><i class="fa fa-tag"></i><a href="/tags/git/" title="git" class="tag">git </a><a href="/tags/版本控制/" title="版本控制" class="tag">版本控制 </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a role="navigation" href="/" class="btn">上一页</a></li></ul></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
