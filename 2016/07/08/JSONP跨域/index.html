@@ -1,245 +1,34 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>JSONP跨域 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Asynchronous JavaScript and XML (Ajax) 是Web2.0的关键技术。AJAX与服务器交换数据刷新局部网页,不需重载。  因为浏览器及同源策略的限制，ajax不允许跨域通信。同源是指协议、域名和端口都一致的情况。同源策略保证一个源的动态脚本不能读取或操作其他源的http响应和cookie，使浏览器隔离不同源的内容之间互相操作。">
-<meta name="keywords" content="JSONP跨域">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JSONP跨域">
-<meta property="og:url" content="http://yoursite.com/2016/07/08/JSONP跨域/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Asynchronous JavaScript and XML (Ajax) 是Web2.0的关键技术。AJAX与服务器交换数据刷新局部网页,不需重载。  因为浏览器及同源策略的限制，ajax不允许跨域通信。同源是指协议、域名和端口都一致的情况。同源策略保证一个源的动态脚本不能读取或操作其他源的http响应和cookie，使浏览器隔离不同源的内容之间互相操作。">
-<meta property="og:updated_time" content="2017-06-11T14:18:31.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JSONP跨域">
-<meta name="twitter:description" content="Asynchronous JavaScript and XML (Ajax) 是Web2.0的关键技术。AJAX与服务器交换数据刷新局部网页,不需重载。  因为浏览器及同源策略的限制，ajax不允许跨域通信。同源是指协议、域名和端口都一致的情况。同源策略保证一个源的动态脚本不能读取或操作其他源的http响应和cookie，使浏览器隔离不同源的内容之间互相操作。">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+include mixins
 
-</head>
+extends partial/layout
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-JSONP跨域" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/08/JSONP跨域/" class="article-date">
-  <time datetime="2016-07-07T16:55:40.000Z" itemprop="datePublished">2016-07-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      JSONP跨域
-    </h1>
-  
+block site_title
+    != page.title + " · " + config.title
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>Asynchronous JavaScript and XML (Ajax) 是Web2.0的关键技术。AJAX与服务器交换数据刷新局部网页,不需重载。</p>
-</blockquote>
-<p>因为浏览器及同源策略的限制，ajax不允许跨域通信。同源是指协议、域名和端口都一致的情况。同源策略保证一个源的动态脚本不能读取或操作其他源的http响应和cookie，使浏览器隔离不同源的内容之间互相操作。<br><a id="more"></a></p>
-<h3 id="Access-Control-Allow-Origin"><a href="#Access-Control-Allow-Origin" class="headerlink" title="Access-Control-Allow-Origin"></a>Access-Control-Allow-Origin</h3><p>解决跨域问题可以在第三方网站开启HTTP的Access-Control-Allow-Origin参数，当目标页面的response包含Access-Control-Allow-Origin 这个header，而且还包含我们的域名时，浏览器就允许拿到它页面的数据：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Access-Control-Allow-Origin: http://www.1oveit.club</div></pre></td></tr></table></figure></p>
-<p>当值为 * 表示匹配所有，都能用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Access-Control-Allow-Origin: *</div></pre></td></tr></table></figure></p>
-<p>但是此时的主动权不在我们手里。</p>
-<h3 id="JSONP解决跨域"><a href="#JSONP解决跨域" class="headerlink" title="JSONP解决跨域"></a>JSONP解决跨域</h3><p>还可以使用更为主动的方法，使用JSONP解决跨域问题。分为以下几步：<br>我们知道多个不同的script标签中的数据是可以相互访问的，而script的src的本质就是将导入文件中的内容拷贝到当前script标签中，我们拿到百度搜索URL地址：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=ab&amp;cb=jQuery11020672211218553074_1491468814655</div></pre></td></tr></table></figure></p>
-<p>搜索之后的结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jQuery11020672211218553074_1491468814655(&#123;q:&quot;ab&quot;,p:false,s:[&quot;abs&quot;,&quot;ab胶&quot;,&quot;abc&quot;,&quot;abac形式的成语&quot;,&quot;abcc形式的成语&quot;,&quot;abab式的词语&quot;,&quot;abo&quot;,&quot;abp&quot;,&quot;abstract&quot;,&quot;abs塑料&quot;]&#125;);</div></pre></td></tr></table></figure></p>
-<p>从而可以引出跨域(jsonP)原理：<br>1.src可以拿到非当前域的数据。<br>2.script的src的本质就是将导入文件中的内容拷贝到当前script标签中。<br>3.如果src返回的数据符合 函数名称(参数); 格式, 那么就可以实现跨域。<br><strong>具体例子</strong>：<br>在本地的文件的script准备回调函数say,<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(obj);     </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>通过script的src属性拿到百度要搜索的URL并且拼接<code>?wd=ab&amp;cb=say</code>参数，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=ab&amp;cb=say&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<p>最后，调用say方法，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">say(&#123;q:&quot;ab&quot;,p:false,s:[&quot;abs&quot;,&quot;ab胶&quot;,&quot;abc&quot;,&quot;abac形式的成语&quot;,&quot;abcc形式的成语&quot;,&quot;abab式的词语&quot;,&quot;abo&quot;,&quot;abp&quot;,&quot;abstract&quot;,&quot;abs塑料&quot;]&#125;);</div></pre></td></tr></table></figure></p>
-<p><strong>具体例子</strong>：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">      //1.使用src，请求数据</div><div class="line">         &lt;script src="http://datainfo.duapp.com/shopdata/getGoods.php?callback=callback"&gt;</div><div class="line">     //2.在本地声明一个方法</div><div class="line">         function callback(args)      &#123;  console.log(args); &#125;</div><div class="line">        //3.要在服务端要处理跨域</div><div class="line">            $res = $_GET['callback'];</div><div class="line">            echo $res."('我是服务的数据')";</div><div class="line">    function callback(args) &#123;</div><div class="line">        console.log(args);</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;!--</div><div class="line">    如果服务器返回的是js代码，那么浏览器就会直接执行js代码</div><div class="line">    借助浏览器的特性来实现跨域</div><div class="line">--&gt;</div><div class="line">&lt;script src="http://datainfo.duapp.com/shopdata/getGoods.php?call6‘back=callback"&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<p>总体的流程大概就是这样子，不过实际开发中要与后台定好接口，希望能够帮到你。</p>
+block description
+    - var desc = page.desc || strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150);
+    meta(name="description", content=desc)
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/08/JSONP跨域/" data-id="cj3svbayg000x1cxa6ad0g03h" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSONP跨域/">JSONP跨域</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2016/11/11/有趣的ChromeDevTools/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          有趣的Chrome DevTools
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/04/25/js-06/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">JavaScript简明教程（6）</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript简明教程/">JavaScript简明教程</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome-DevTools/">Chrome DevTools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSONP跨域/">JSONP跨域</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/first/">first</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/my/">my</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原型继承机制/">原型继承机制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/娱乐/">娱乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/怀旧/">怀旧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/版本控制/">版本控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简明教程/">简明教程</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Chrome-DevTools/" style="font-size: 10px;">Chrome DevTools</a> <a href="/tags/JSONP跨域/" style="font-size: 10px;">JSONP跨域</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/first/" style="font-size: 10px;">first</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/my/" style="font-size: 10px;">my</a> <a href="/tags/原型继承机制/" style="font-size: 10px;">原型继承机制</a> <a href="/tags/娱乐/" style="font-size: 10px;">娱乐</a> <a href="/tags/怀旧/" style="font-size: 10px;">怀旧</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/简明教程/" style="font-size: 20px;">简明教程</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/06/11/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/11/first/">first</a>
-          </li>
-        
-          <li>
-            <a href="/2017/05/18/firstPassage/">firstPassage</a>
-          </li>
-        
-          <li>
-            <a href="/2016/11/11/有趣的ChromeDevTools/">有趣的Chrome DevTools</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/08/JSONP跨域/">JSONP跨域</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-  </div>
-</body>
-</html>
+block content
+  .autopagerize_page_element: .content: .post-page
+    include mixins
+    +make_post(page, true)
+    .share
+      .evernote
+        a.fa.fa-bookmark(href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank")
+      .weibo
+        a.fa.fa-weibo(href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));")
+      .twitter
+        a.fa.fa-twitter(href=url_for("http://twitter.com/home?status="+","+config.url+"/"+page.path+","+config.title+","+page.title+",;"))
+    - var prev = page.prev ? page.prev.path : false;
+    - var next = page.next ? page.next.path : false;
+    .pagination
+      ul.clearfix
+        if prev
+          li.pre.pagbuttons
+            a.btn(role="navigation",href=url_for(prev), title=page.prev.title)!= __('prev_post')
+        if next
+          li.next.pagbuttons
+            a.btn(role="navigation",href=url_for(next), title=page.next.title)!= __('next_post')
+    if page.comments
+        include partial/comments

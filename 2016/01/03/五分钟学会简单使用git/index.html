@@ -1,258 +1,34 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>五分钟学会简单使用git | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="五分钟，简单入门。学会之后可以愉快的管理你的文件啦。  简单使用git 其实很简单，有多简单呢？     1. git init 初始化一个仓库；     2. git add . 添加文件到暂存区；     3. git commit -m&amp;apos;messeage&amp;apos;  提交至版本库；     4. git push origin master 推送至远程仓库；">
-<meta name="keywords" content="git,版本控制">
-<meta property="og:type" content="article">
-<meta property="og:title" content="五分钟学会简单使用git">
-<meta property="og:url" content="http://yoursite.com/2016/01/03/五分钟学会简单使用git/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="五分钟，简单入门。学会之后可以愉快的管理你的文件啦。  简单使用git 其实很简单，有多简单呢？     1. git init 初始化一个仓库；     2. git add . 添加文件到暂存区；     3. git commit -m&amp;apos;messeage&amp;apos;  提交至版本库；     4. git push origin master 推送至远程仓库；">
-<meta property="og:updated_time" content="2017-06-11T14:18:28.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="五分钟学会简单使用git">
-<meta name="twitter:description" content="五分钟，简单入门。学会之后可以愉快的管理你的文件啦。  简单使用git 其实很简单，有多简单呢？     1. git init 初始化一个仓库；     2. git add . 添加文件到暂存区；     3. git commit -m&amp;apos;messeage&amp;apos;  提交至版本库；     4. git push origin master 推送至远程仓库；">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+include mixins
 
-</head>
+extends partial/layout
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-五分钟学会简单使用git" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/03/五分钟学会简单使用git/" class="article-date">
-  <time datetime="2016-01-02T16:00:00.000Z" itemprop="datePublished">2016-01-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      五分钟学会简单使用git
-    </h1>
-  
+block site_title
+    != page.title + " · " + config.title
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>五分钟，简单入门。学会之后可以愉快的管理你的文件啦。</p>
-</blockquote>
-<h2 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h2><pre><code>git 其实很简单，有多简单呢？
-    1. git init 初始化一个仓库；
-    2. git add . 添加文件到暂存区；
-    3. git commit -m&apos;messeage&apos;  提交至版本库；
-    4. git push origin master 推送至远程仓库；
-</code></pre><a id="more"></a>
-<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><pre><code>什么是平衡分支？实际工作中一般新建平衡分支用于开发调试等，然后再合并到主分支。
-    1.git checkout -b dev 新建dev分支并切换到dev分支。
-    相当于：git branch dev  创建dev分支；  
-    git checkout dev 切换到dev分支；
-    2. 开发或者调试结束后  
-    git add * 添加所有文件到暂存区； 
-    git commit -m&apos;messeage&apos; 提交至版本库；  
-    3.git checkout master 切换到主分支；  
-    git merge dev 合并分支；
-    git branch -d dev   删除分支；  
-</code></pre><h2 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h2><pre><code>什么是冲突？同一份文件同一个地方被不同的协作者修改了，最后一个推送至远程的会产生冲突。  
-解决冲突：git pull 更新本地仓库
-打开冲突文件，找到冲突部分，协调修改。
-   1 TODO
-   2 &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-   3 我修改的
-   4 =======
-   5 协作者修改的
-   6 &gt;&gt;&gt;&gt;&gt;&gt;&gt; 
-经过协调，修改为       
-   1 TODO
-   2 经过协调修改的
-</code></pre><p>到这里，你已经基本上掌握了git的使用了，想再深入了解，请点击<a href="http://git.oschina.net/progit/1-起步.html#1.1-关于版本控制" target="_blank" rel="external">git Pro中文</a></p>
+block description
+    - var desc = page.desc || strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150);
+    meta(name="description", content=desc)
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/03/五分钟学会简单使用git/" data-id="cj3svbaun000c1cxax9ffao1n" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/版本控制/">版本控制</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2016/01/08/12年怀旧/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          12年逗比如我
-        
-      </div>
-    </a>
-  
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript简明教程/">JavaScript简明教程</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome-DevTools/">Chrome DevTools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSONP跨域/">JSONP跨域</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/first/">first</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/my/">my</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原型继承机制/">原型继承机制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/娱乐/">娱乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/怀旧/">怀旧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/版本控制/">版本控制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简明教程/">简明教程</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Chrome-DevTools/" style="font-size: 10px;">Chrome DevTools</a> <a href="/tags/JSONP跨域/" style="font-size: 10px;">JSONP跨域</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/first/" style="font-size: 10px;">first</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/my/" style="font-size: 10px;">my</a> <a href="/tags/原型继承机制/" style="font-size: 10px;">原型继承机制</a> <a href="/tags/娱乐/" style="font-size: 10px;">娱乐</a> <a href="/tags/怀旧/" style="font-size: 10px;">怀旧</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/简明教程/" style="font-size: 20px;">简明教程</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/06/11/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/11/first/">first</a>
-          </li>
-        
-          <li>
-            <a href="/2017/05/18/firstPassage/">firstPassage</a>
-          </li>
-        
-          <li>
-            <a href="/2016/11/11/有趣的ChromeDevTools/">有趣的Chrome DevTools</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/08/JSONP跨域/">JSONP跨域</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-  </div>
-</body>
-</html>
+block content
+  .autopagerize_page_element: .content: .post-page
+    include mixins
+    +make_post(page, true)
+    .share
+      .evernote
+        a.fa.fa-bookmark(href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank")
+      .weibo
+        a.fa.fa-weibo(href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));")
+      .twitter
+        a.fa.fa-twitter(href=url_for("http://twitter.com/home?status="+","+config.url+"/"+page.path+","+config.title+","+page.title+",;"))
+    - var prev = page.prev ? page.prev.path : false;
+    - var next = page.next ? page.next.path : false;
+    .pagination
+      ul.clearfix
+        if prev
+          li.pre.pagbuttons
+            a.btn(role="navigation",href=url_for(prev), title=page.prev.title)!= __('prev_post')
+        if next
+          li.next.pagbuttons
+            a.btn(role="navigation",href=url_for(next), title=page.next.title)!= __('next_post')
+    if page.comments
+        include partial/comments
